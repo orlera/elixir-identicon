@@ -2,6 +2,14 @@ defmodule Identicon do
   def main(input) do
     input
     |> hash_string
+    |> pick_color
+  end
+
+  def pick_color(image) do
+    %Identicon.Image{hex: hex_list} = image
+    [r, g, b | _tail] = hex_list
+
+    [r, g, b]
   end
 
   def hash_string(input) do
