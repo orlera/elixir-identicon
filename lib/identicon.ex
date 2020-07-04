@@ -1,5 +1,5 @@
 defmodule Identicon do
-  def main(input) do
+  def generate(input) do
     input
     |> hash_string
     |> pick_color
