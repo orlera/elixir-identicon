@@ -1,21 +1,21 @@
 # Identicon
 
-**TODO: Add description**
+Simple Github-like identicon generator.
+It generates a 250x250 monocromatic image given a string as input.
+
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `identicon` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:identicon, "~> 0.1.0"}
-  ]
-end
+This implementation relies on Erlang's `egd` for image plotting. You'll need to install `rebar` for it to work:
+```
+mix local.rebar --force
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/identicon](https://hexdocs.pm/identicon).
+## Run
+From the `iex` console (`iex -S mix`):
+```
+Identicon.generate("orlera")
+```
 
+Will generate an image `identicons/orlera.png` based on the input string.
