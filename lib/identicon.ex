@@ -11,7 +11,10 @@ defmodule Identicon do
   end
 
   def save_image(image, filename) do
-    File.write("#{filename}.png", image)
+    path = Path.expand("identicons/#{filename}.png")
+    File.mkdir_p Path.dirname(path)
+    
+    File.write(path, image)
   end
 
   def draw_image(%Identicon.Image{color: color, pixel_map: pixel_map}) do
